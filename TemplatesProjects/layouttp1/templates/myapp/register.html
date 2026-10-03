@@ -1,0 +1,41 @@
+{%extends 'myapp/base.html'%}
+{%block content_block%}
+    <div class="container">
+        <h3 class="text-center text-success">Employees Information</h3>
+
+        {%if emplist %}
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th class="bg-primary text-white">Employee ID</th>
+                            <th class="bg-primary text-white">Employee Name</th>
+                            <th class="bg-primary text-white">Employee Salary</th>
+                            <th class="bg-primary text-white">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for emp in emplist%}
+                            <tr>
+                                <td>{{emp.EmployeeId}}</td>
+                                 <td>{{emp.EmployeeName}}</td>
+                                  <td>{{emp.EmployeeSalary}}</td>
+                                  <td>
+                                    Edit  Details  Delete
+                                  </td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {%else%}
+
+        <h1 class="text-danger text-center">Records no found</h1>
+        {%endif%}
+
+
+    </div>
+{%endblock%}

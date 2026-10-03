@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary">
+        <a href="/" class="navbar-brand text-white ms-3">Home</a>
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="/register" class="nav-link text-light">Register</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="/login" class="nav-link text-light">Login</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="/about" class="nav-link text-light">About</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="/contact" class="nav-link text-light">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        {%block content_block%}
+        {%endblock%}
+
+</body>
+</html>
