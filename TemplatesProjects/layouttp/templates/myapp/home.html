@@ -2,6 +2,46 @@
 
 {%block body_block%}
 
-<h1 class="text-center text-primary">Home Page</h1>
+<div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-sm-8">
+            {%if Stu_List%}
+
+            <table class="table table-bordered table-striped table-hover text-center text-capitalize shadow-lg">
+                <thead>
+                    <tr>
+                        <th class="bg-danger text-white">Student ID</th>
+                        <th class="bg-danger text-white">Student Name</th>
+                        <th class="bg-danger text-white">StudentMarks</th>
+                        <th class="bg-danger text-white">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for stu in Stu_List%}
+                        <tr>
+                            <td>{{stu.Id}}</td>
+                            <td>{{stu.Name}}</td>
+                            <td>{{stu.Marks}}</td>
+                            <td>
+                                <i class="bi bi-pencil-square fs-2 text-primary"></i>
+                                <i class="bi bi-trash fs-2 text-danger"></i>
+                                <i class="bi bi-binoculars fs-2 text-success"></i>
+                            </td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+
+            </table>
+
+
+            {%else%}
+
+            <h3 class="text-center text-danger">Records Not Found</h3>
+
+            {%endif%}
+
+        </div>
+    </div>
+</div>
 
 {%endblock%}
