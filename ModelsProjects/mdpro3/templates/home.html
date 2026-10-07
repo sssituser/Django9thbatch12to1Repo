@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+   <div class="text-center display-5">Home Page</div> 
+</body>
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-sm-8">
+                 {%if pro_list%}
+                    <table class="table table-bordered table-hover text-center text-capitalize">
+                        <thead>
+                            <tr>
+                                <th class="bg-primary text-white">Prod Id</th>
+                                 <th class="bg-primary text-white">Prod Name</th>
+                                  <th class="bg-primary text-white">Prod Price</th>
+                                  <th class="bg-primary text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for pro in pro_list%}
+                                <tr>
+                                    <td>{{pro.ProId}}</td>
+                                     <td>{{pro.ProName}}</td>
+                                      <td>{{pro.ProPrice}}</td>
+                                      <td>Edit Delete Details</td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+
+                 {%else%}
+                        <div class="display-4 text-center text-danger">Records not found</div>
+                 {%endif%}
+            </div>
+        </div>
+    </div>
+</html>
