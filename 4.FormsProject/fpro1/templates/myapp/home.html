@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+{% load widget_tweaks %}
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+   <div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card mt-5">
+                <div class="card-header bg-success text-white text-center">
+                    <h3>Register Here</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                       
+                        <div class="m-2">
+                    {{Form.EmpId|add_class:"form-control"|attr:"placeholder:Employee ID"}}
+
+                        </div>
+                         <div class="m-2">
+                    {{Form.EmpName|add_class:"form-control"|attr:"placeholder:Employee Name"}}
+
+                        </div>
+
+                         <div class="m-2">
+                    {{Form.EmpSal|add_class:"form-control"|attr:"placeholder:Employee Salary"}}
+
+                        </div>
+
+
+                        <button class="btn btn-sm btn-success">Register</button>
+                        <a href="/employees" class="btn btn-warning btn-sm float-end">Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
