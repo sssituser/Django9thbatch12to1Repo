@@ -3,11 +3,11 @@
 
 {%block body_block%}
     <h2 class="text-center text-primary">Students Information</h2>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row d-flex justify-content-center">
             <div class="col-sm-8">
                     {%if stu_list%}
-                        <table class="table table-bordered table-striped table-hover text-center text-capitalize">
+                        <table class="table table-bordered table-striped table-hover text-center text-capitalize shadow-lg">
                             <thead>
                                 <tr>
                                     <th class="bg-primary text-white">Student Id</th>
@@ -23,7 +23,21 @@
                                         <td>{{stu.StudentName}}</td>
                                         <td>{{stu.StudentMarks}}</td>
                                         <td>
-                                            Details  Edit  Delete
+                                            <a href="/details/{{stu.StudentId}}/">
+                                                <i class="bi bi-eye fs-2 text-success"></i>
+                                            </a>
+                                            
+                                              <a href="/edit/{{stu.StudentId}}/">
+                                                <i class="bi bi-pencil fs-2 text-warning"></i>
+                                             </a>
+
+                                             <a href="/delete/{{stu.StudentId}}/">
+                                                <i class="bi bi-trash fs-2 text-danger"></i>
+                                             </a>
+                                            
+                                            
+                                            
+                                            
                                         </td>
                                     </tr>
                                 {%endfor%}

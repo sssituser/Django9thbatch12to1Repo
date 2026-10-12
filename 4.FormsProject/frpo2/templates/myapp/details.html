@@ -3,4 +3,22 @@
 
 {%block body_block%}
     <h2 class="text-center text-primary">Details Page</h2>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th class="bg-primary text-white">Student Id</th>
+                    <th class="bg-primary text-white">Student Name</th>
+                    <th class="bg-primary text-white">Student Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{stud.StudentId}}</td>
+                    <td>{{stud.StudentName}}</td>
+                    <td>{{stud.StudentMarks}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 {%endblock%}

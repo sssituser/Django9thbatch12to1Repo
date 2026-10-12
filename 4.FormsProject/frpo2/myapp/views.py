@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from myapp.models import Student
 from myapp.forms import StudentForm
 
@@ -21,13 +21,16 @@ def contact(request):
     return render(request,'myapp/contact.html')
 
 def edit(request,id):
-    return render(request,'myapp/edit.html')
+    stu = get_object_or_404(Student,StudentId=id)
+    return render(request,'myapp/edit.html',{"stud":stu})
 
 def details(request,id):
-    return render(request,'myapp/details.html')
+    stu = get_object_or_404(Student,StudentId=id)
+    return render(request,'myapp/details.html',{"stud":stu})
 
 def delete(request,id):
-    return render(request,'myapp/delete.html')
+    stu = get_object_or_404(Student,StudentId=id)
+    return render(request,'myapp/delete.html',{"stud":stu})
 
 def students(request):
     studs = Student.objects.all()
