@@ -14,7 +14,7 @@ def register(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            return redirect('students')
+            return redirect('abc')
     return render(request,'myapp/register.html',{"form":form})
 
 def contact(request):
@@ -22,7 +22,13 @@ def contact(request):
 
 def edit(request,id):
     stu = get_object_or_404(Student,StudentId=id)
-    return render(request,'myapp/edit.html',{"stud":stu})
+    form = StudentForm(instance=stu)
+    if request.method == 'POST':
+        form = StudentForm(request.POST,instance=stu)
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect("abc")    
+    return render(request,'myapp/edit.html',{"form":form})
 
 def details(request,id):
     stu = get_object_or_404(Student,StudentId=id)
@@ -30,6 +36,9 @@ def details(request,id):
 
 def delete(request,id):
     stu = get_object_or_404(Student,StudentId=id)
+    if request.method =='POST':
+        Student.delete(stu)
+        return redirect('abc')
     return render(request,'myapp/delete.html',{"stud":stu})
 
 def students(request):

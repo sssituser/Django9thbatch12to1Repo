@@ -1,0 +1,29 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+    <h2 class="text-center text-danger">Do You Want to Delete ?</h2>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th class="bg-primary text-white">Trainer Id</th>
+                    <th class="bg-primary text-white">Trainer Name</th>
+                    <th class="bg-primary text-white">Trainer Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{trainer.TrainerId}}</td>
+                    <td>{{trainer.TrainerName}}</td>
+                    <td>{{trainer.TrainerSal}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <a href="/trainers" class="btn btn-primary btn-sm">Back</a>
+            <button class="btn btn-danger btn-sm">Delete</button>
+        </form>
+    </div>
+{%endblock%}

@@ -1,0 +1,48 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-8">
+                {%if trainers_list%}
+                    <table class="table table-bordered table-striped table-hover text-center">
+                        <caption class="caption-top text-center  text-primary mb-5"><h3>Trainers Informration</h3></caption>
+                        <thead>
+                            <tr>
+                                <th class="bg-primary text-white">Trainer ID</th>
+                                <th class="bg-primary text-white">Trainer Name</th>
+                                <th class="bg-primary text-white">Trainer Salary</th>
+                                <th class="bg-primary text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for trainer in trainers_list%}
+                                <tr>
+                                    <td>{{trainer.TrainerId}}</td>
+                                    <td>{{trainer.TrainerName}}</td>
+                                    <td>{{trainer.TrainerSal}}</td>
+                                    <td>
+                                        <a href="/details/{{trainer.TrainerId}}" class="btn btn-primary btn-sm">
+                                            Details
+                                        </a>
+                                         <a href="/edit/{{trainer.TrainerId}}/" class="btn btn-primary btn-sm">
+                                            Edit
+                                        </a>
+                                         <a href="/delete/{{trainer.TrainerId}}/" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+
+                {%else%}
+                    <p class="h3 text-center text-danger">Records Not Found</p>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+{%endblock%}
