@@ -1,0 +1,34 @@
+{%extends 'myapp/base.html'%}
+
+{%load widget_tweaks%}
+
+{%block body_block%}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card mt-5">
+                    <div class="card-header bg-primary text-white text-center">
+                        <div class="display-6">Create Employee</div>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {%csrf_token%}
+                            <div class="mb-2">
+                                 {{form.EmployeeId|add_class:"form-control"|attr:"Placeholder : Employee Id"}}
+                            </div>
+                            <div class="mb-2">
+                                 {{form.EmployeeName|add_class:"form-control"|attr:"Placeholder : Employee Name"}}
+                            </div>
+                            <div class="mb-2">
+                                 {{form.EmployeeSalary|add_class:"form-control"|attr:"Placeholder : Employee Salary"}}
+                            </div>
+                            <div class="mb-2">
+                                <button class="btn btn-sm btn-outline-primary">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,37 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+                {%if employee_list%}
+                    <table class="table table-bordered table-hover text-center">
+                        <caption class="caption-top">
+                            <p class="h4 text-primary">Employees Info</p>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="bg-primary text-white">Employee Id</th>
+                                <th class="bg-primary text-white">Employee Name</th>
+                                <th class="bg-primary text-white">Employee Salary</th>
+                                <th class="bg-primary text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for emp in employee_list%}
+                                <tr>
+                                    <td>{{emp.EmployeeId}}</td>
+                                    <td>{{emp.EmployeeName}}</td>
+                                    <td>{{emp.EmployeeSalary}}</td>
+                                    <td>Details | Edit | Delete</td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                {%else%}
+                    <p class="h3 text-center text-danger mt-5">Records Not Found</p>
+                {%endif%}
+        </div>
+    </div>
+</div>
+{%endblock%}

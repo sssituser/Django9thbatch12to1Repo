@@ -1,0 +1,51 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+    <div class="container ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-8">
+                    {%if employee_list%}
+                        <table class="table table-bordered table-striped table-hover text-center text-capitalize shadow-lg">
+                                <caption class="caption-top text-center fs-4 fw-bold text-primary mb-2">
+                                        Employees Information
+                                </caption>
+                            <thead>
+                                <tr>
+                                    <th class="bg-primary text-white">Employee Id</th>
+                                    <th class="bg-primary text-white">Employee Name</th>
+                                    <th class="bg-primary text-white">Employee Salary</th>
+                                    <th class="bg-primary text-white">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for emp in employee_list%}
+                                    <tr>
+                                        <td>{{emp.EmployeeId}}</td>
+                                        <td>{{emp.EmployeeName}}</td>
+                                        <td>{{emp.EmployeeSalary}}</td>
+                                        <td>
+                                            <a href="/detail/{{emp.EmployeeId}}/">
+                                                <i class="bi bi-eye fs-2 text-success"></i>
+                                            </a>                        
+                                              <a href="/edit/{{emp.EmployeeId}}/">
+                                                <i class="bi bi-pencil fs-2 text-warning"></i>
+                                             </a>
+                                             <a href="/delete/{{emp.EmployeeId}}/">
+                                                <i class="bi bi-trash fs-2 text-danger"></i>
+                                             </a>
+                                        </td>
+                                    </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>                    
+                    {%else%}
+                        <div class="display-6 text-danger text-center">
+                            Records Not Found
+                        </div>
+                    {%endif%}
+            </div>
+        </div>
+
+    </div>
+{%endblock%}
