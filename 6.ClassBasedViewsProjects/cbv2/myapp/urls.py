@@ -6,5 +6,5 @@ urlpatterns = [
     path('create/',CreateEmployee.as_view()),
     path('edit/<int:pk>/',EditEmployee.as_view()),
     path('delete/<int:pk>/',RemoveEmployee.as_view()),
-    path('details/',EmployeeDetail.as_view()),
+    path('details/<int:pk>/',EmployeeDetail.as_view()),
 ]

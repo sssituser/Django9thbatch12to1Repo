@@ -1,0 +1,42 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card mt-5">
+                
+                <div class="card-header bg-primary text-white text-center">
+                    <p class="h3">
+                       Employee Details
+                    </p>
+                </div>
+
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p class="h3">Employee ID : {{employee.EmployeeId}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h3">Employee Name : {{employee.EmployeeName}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h3">Employee Salary : {{employee.EmployeeSalary}}</p>
+                        </li>
+                    </ul>
+                 
+                </div>
+
+                <div class="card-footer">
+                    <a href="/" class="btn btn-sm btn-warning float-end">Back To List</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}
