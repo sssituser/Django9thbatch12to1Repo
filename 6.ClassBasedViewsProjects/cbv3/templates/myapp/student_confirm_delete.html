@@ -1,0 +1,36 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+               
+                <div class="card-header bg-dark text-white text-center">
+                    <p class="display-6">
+                        Student Detials
+                    </p>
+                </div>
+                <div class="card-body">
+                   <ul class="list-group">
+                        <li class="list-group-item">
+                                <h3>Student Id : {{student.StudentId}}</h3>
+                                <h3>Student Name : {{student.StudentName}}</h3>
+                                <h3>Student Marks : {{student.StudentMarks}}</h3>
+                        </li>
+                   </ul>
+                </div>
+                <div class="card-footer">
+                    <form action="" method="POST">
+                        {%csrf_token%}
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <a href="/" class="btn btn-warning btn-sm float-end">Back To  List</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

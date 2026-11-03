@@ -1,0 +1,42 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            {%if student_list%}
+                <table class="table table-bordered table-hover text-center">
+                    <caption class="caption-top text-center"><h3>StudentInformation</h3></caption>
+                    <thead>
+                        <tr>
+                            <th class="bg-dark text-white">Student Id</th>
+                            <th class="bg-dark text-white">Student Name</th>
+                            <th class="bg-dark text-white">Student Marks</th>
+                            <th class="bg-dark text-white">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for stu in student_list%}
+                            <tr>
+                                <td>{{stu.StudentId}}</td>
+                                <td>{{stu.StudentName}}</td>
+                                <td>{{stu.StudentMarks}}</td>
+                                <td>
+                                <a href="/update/{{stu.StudentId}}/">Edit</a>
+                                <a href="/detail/{{stu.StudentId}}/">Detail</a>
+                                <a href="/delete/{{stu.StudentId}}/">Delete</a>
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+           
+            {%else%}
+
+            <p class="display-4 text-danger text-center mt-5">Records Not Found</p>
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+{%endblock%}
