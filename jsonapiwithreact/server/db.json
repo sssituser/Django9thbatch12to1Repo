@@ -1,0 +1,9 @@
+{
+    "employees":[
+        {
+            "eid":111,
+            "ename":"abc",
+            "esal":60000
+        }
+    ]
+}
