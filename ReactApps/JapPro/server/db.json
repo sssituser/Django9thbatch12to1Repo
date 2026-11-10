@@ -1,0 +1,23 @@
+{
+  "employees": [
+    {
+      "eid": "111",
+      "ename": "abc",
+      "esal": 45000,
+      "id": "pyqRf834xqg"
+    },
+    {
+      "eid": "112",
+      "ename": "kamal",
+      "esal": "60000",
+      "id": "BVfmZN_gAu8"
+    },
+    {
+      "eid": "113",
+      "ename": "kiran",
+      "esal": "70000",
+      "id": "WZDiKktOvv8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
