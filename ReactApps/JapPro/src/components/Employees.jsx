@@ -21,6 +21,7 @@ function Employees(){
             {
                 employees.length>0 ?
                 <table className="table table-bordered table-hover text-center">
+                    <caption style={{captionSide:"top",textAlign:"center"}} className="font-weight-bolder text-primary" ><h2>Employee Info</h2></caption>
                   <thead className="bg-secondary text-white">
                     <tr>
                         <th>Employee ID</th>

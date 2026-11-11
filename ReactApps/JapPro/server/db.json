@@ -17,6 +17,12 @@
       "ename": "kiran",
       "esal": "70000",
       "id": "WZDiKktOvv8"
+    },
+    {
+      "eid": "114",
+      "ename": "Raj",
+      "esal": "80000",
+      "id": "wRQdA1vVY2U"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
