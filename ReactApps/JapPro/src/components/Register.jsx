@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState  } from "react";
+import { useNavigate } from "react-router-dom";
 function Register(){
+    let navi = useNavigate()
     const[emply,setEmply]=useState({
         "eid":"",
         "ename":"",
@@ -12,10 +14,12 @@ function Register(){
             [event.target.name]:event.target.value
         })
     }
-    function registerEmployee(){
+    function registerEmployee(event){
+        event.preventDefault()
         axios.post("http://localhost:9001/employees/",emply)
         .then(()=>{
             alert("Employee Added")
+            navi("/employees")
         })
         .catch((error)=>{
             alert(error)

@@ -21,7 +21,6 @@ function Employees(){
             {
                 employees.length>0 ?
                 <table className="table table-bordered table-hover text-center">
-                    <caption style={{captionSide:"top",textAlign:"center"}} className="font-weight-bolder text-primary" ><h2>Employee Info</h2></caption>
                   <thead className="bg-secondary text-white">
                     <tr>
                         <th>Employee ID</th>
@@ -39,13 +38,13 @@ function Employees(){
                                     <td>{emp.ename}</td>
                                     <td>{emp.esal}</td>
                                     <th>
-                                        <Link to={`/details/${emp.eid}`}>
+                                        <Link to={`/details/${emp.id}`}>
                                             <i className="fa fa-eye fa-3x text-primary"></i>
                                         </Link>
-                                        <Link to={`/edit/${emp.eid}`}>
+                                        <Link to={`/edit/${emp.id}`}>
                                             <i className="fa fa-pencil-square fa-3x text-warning"></i>
                                         </Link>
-                                        <Link to={`/delete/${emp.eid}`}>
+                                        <Link to={`/delete/${emp.id}`}>
                                             <i className="fa fa-trash-alt fa-3x text-danger"></i>
                                         </Link>
                                     </th>
