@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams,useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 export default function Delete(){
  let navi = useNavigate();
   const {id} =useParams()
@@ -25,8 +25,14 @@ export default function Delete(){
     event.preventDefault();
     axios.delete(`http://127.0.0.1:8000/employees/${id}/`)
     .then(()=>{
-      alert("Employee Deleted")
-      navi("/employees")
+      toast.error("Employee deleted...",{
+           position:"top-center",
+           theme:"colored",
+           autoClose:2000,
+           onClose:()=>{
+             navi("/employees")
+           }
+         })
     }).catch((e)=>{
       alert(e)
     })
@@ -39,7 +45,7 @@ export default function Delete(){
       
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <div className="card shadow-lg">
+            <div className="card shadow-lg animated zoomIn">
               <div className="card-header bg-danger text-white text-center">
                 <p className="h3">Do you want to Delete ?</p>
               </div>

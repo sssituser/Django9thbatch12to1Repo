@@ -9,9 +9,14 @@ import Edit from "./components/Edit";
 import Delete from "./components/Delete";
 import Employees from "./components/Employees";
 import Navbar from "./components/Navbar";
+
+import {ToastContainer} from 'react-toastify'
+
 export default function App(){
   return(
+    
     <React.Fragment>   
+      <ToastContainer/>
       <BrowserRouter>
       <Navbar/>
         <Routes>
