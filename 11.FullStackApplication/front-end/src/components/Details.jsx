@@ -32,6 +32,7 @@ export default function Details(){
               <th>Employee Id</th>
               <th>Employee Name</th>
               <th>Employee Salary</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,12 @@ export default function Details(){
               <td>{emp.EmployeeId}</td>
                <td>{emp.EmployeeName}</td>
                <td>{emp.EmployeeSalary}</td>
+               <Link to={`/edit/${emp.EmployeeId}`}>
+                  <i className="fa fa-pen fa-2x text-warning"></i>
+                </Link>
+                <Link to={`/delete/${emp.EmployeeId}`}>
+                   <i className="fa fa-trash fa-2x text-danger"></i>
+                </Link>
             </tr>
           </tbody>
         </table>

@@ -57,10 +57,10 @@ export default function Employees(){
                         <Link to={`/details/${emp.EmployeeId}`}>
                           <i className="fa fa-eye fa-2x text-secondary"></i>
                         </Link>
-                          <Link to={`/edit/${emp.EmployeeId}`}>
+                        <Link to={`/edit/${emp.EmployeeId}`}>
                           <i className="fa fa-pen fa-2x text-warning"></i>
                         </Link>
-                          <Link to={`/delete/${emp.EmployeeId}`}>
+                        <Link to={`/delete/${emp.EmployeeId}`}>
                           <i className="fa fa-trash fa-2x text-danger"></i>
                         </Link>
                       </td>

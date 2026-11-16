@@ -45,12 +45,12 @@ export default function Edit(){
 
   return(
     <React.Fragment>
-      <p className="h1 text-center text-primary">Edit Component- {id}</p>
-      <p className="h1">{JSON.stringify(emp)}</p>
+     
+    
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-5">
-                <div className="card">
+                <div className="card shadow-lg animated jello">
                   <div className="card-header bg-secondary text-white text-center">
                       <p className="h3">Edit Employee</p>
                   </div>
@@ -66,8 +66,8 @@ export default function Edit(){
                         <input type="number" name="EmployeeSalary"  onChange={updateInput} value={emp.EmployeeSalary} className="form-control" placeholder="Employee Salary" />
                       </div>
                       <div className="mb-3">
-                        <button className="btn btn-md btn-secondary">Save</button>
-                        <Link to={"/employees"} className="btn btn-md btn-warning  float-right">Back</Link>
+                        <button className="btn btn-sm btn-secondary">Save</button>
+                        <Link to={"/employees"} className="btn btn-sm btn-warning  float-right">Back</Link>
                       </div>
                     </form>
                   </div>
