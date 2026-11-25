@@ -21,7 +21,7 @@ function Employees(){
 
     return(
         <React.Fragment>
-            <p className="h1">Employees Component</p>
+            <p className="h1 text-center text-primary">Employees information </p>
             {
                 JSON.stringify(employees)
             }
