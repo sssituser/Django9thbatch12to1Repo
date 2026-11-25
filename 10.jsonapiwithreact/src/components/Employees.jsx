@@ -21,10 +21,15 @@ function Employees(){
 
     return(
         <React.Fragment>
+<<<<<<< HEAD
             <p className="h1 text-center text-primary">Employees information </p>
             {
                 JSON.stringify(employees)
             }
+=======
+            <p className="h1">Employees Component</p>
+         
+>>>>>>> 5f8560abb8bef0da76162784a216a498033314e1
             <div className="container">
                 {
                     employees.length>0 ?
