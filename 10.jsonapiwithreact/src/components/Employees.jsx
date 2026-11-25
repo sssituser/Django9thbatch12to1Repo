@@ -22,9 +22,7 @@ function Employees(){
     return(
         <React.Fragment>
             <p className="h1">Employees Component</p>
-            {
-                JSON.stringify(employees)
-            }
+         
             <div className="container">
                 {
                     employees.length>0 ?
